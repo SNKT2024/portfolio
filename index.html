@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanket Kumbhar - Full Stack Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="antialiased">
+    <!-- Navigation Bar -->
+    <nav
+      class="bg-black bg-opacity-70 backdrop-blur-md fixed w-full z-50 py-4 shadow-lg rounded-b-xl"
+    >
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="#hero" class="text-2xl font-bold gradient-text rounded-lg p-2"
+          >SANKET KUMBHAR</a
+        >
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#about"
+            class="nav-link-hover text-lg font-medium transition-colors duration-300"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="nav-link-hover text-lg font-medium transition-colors duration-300"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="nav-link-hover text-lg font-medium transition-colors duration-300"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="nav-link-hover text-lg font-medium transition-colors duration-300"
+            >Skills</a
+          >
+        </div>
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden fixed inset-0 bg-black bg-opacity-100 z-40 flex flex-col items-center justify-center space-y-8 text-2xl"
+      >
+        <button
+          id="close-mobile-menu"
+          class="absolute top-6 right-6 text-white focus:outline-none"
+        >
+          <svg
+            class="w-10 h-10"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <a
+          href="#about"
+          class="nav-link-hover text-white transition-colors duration-300"
+          onclick="hideMobileMenu()"
+          >About</a
+        >
+        <a
+          href="#experience"
+          class="nav-link-hover text-white transition-colors duration-300"
+          onclick="hideMobileMenu()"
+          >Experience</a
+        >
+        <a
+          href="#projects"
+          class="nav-link-hover text-white transition-colors duration-300"
+          onclick="hideMobileMenu()"
+          >Projects</a
+        >
+        <a
+          href="#skills"
+          class="nav-link-hover text-white transition-colors duration-300"
+          onclick="hideMobileMenu()"
+          >Skills</a
+        >
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="hero-bg min-h-screen flex items-center justify-center text-center py-20 px-4 relative overflow-hidden"
+      >
+        <div class="relative z-10 max-w-4xl mx-auto">
+          <h1
+            class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up"
+          >
+            Hi, I'm <span class="gradient-text">Sanket</span>
+          </h1>
+          <p
+            class="text-lg md:text-2xl text-gray-400 mb-10 animate-fade-in-up delay-200"
+          >
+            A passionate
+            <span class="gradient-text">Full Stack Developer</span> crafting
+            engaging digital experiences.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fade-in-up delay-400"
+          >
+            <a href="#projects" class="btn-primary">View My Work</a>
+            <a
+              href="https://docs.google.com/document/d/1_YOUR_RESUME_ID_HERE/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary bg-transparent border border-purple-500 hover:bg-purple-600 hover:border-purple-600 transition-all duration-300"
+              >My Resume</a
+            >
+          </div>
+
+          <!-- Skills Slider in Hero Section -->
+          <div
+            class="skills-slider-container w-full max-w-4xl mx-auto py-4 animate-fade-in-up delay-600"
+          >
+            <div class="skills-slider-inner">
+              <!-- Duplicate content for seamless looping -->
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/html-5.png"
+                  alt="HTML5"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/css3.png"
+                  alt="CSS3"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/javascript.png"
+                  alt="JavaScript"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/?size=100&id=123603&format=png&color=000000"
+                  alt="React"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/nodejs.png"
+                  alt="Node.js"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=FFFFFF"
+                  alt="Express.js"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/mongodb.png"
+                  alt="MongoDB"
+              /></span>
+
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
+                  alt="GitHub"
+              /></span>
+
+              <!-- Duplicate for seamless loop -->
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/html-5.png"
+                  alt="HTML5"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/css3.png"
+                  alt="CSS3"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/javascript.png"
+                  alt="JavaScript"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/?size=100&id=123603&format=png&color=000000"
+                  alt="React"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/nodejs.png"
+                  alt="Node.js"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=FFFFFF"
+                  alt="Express.js"
+              /></span>
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/color/96/000000/mongodb.png"
+                  alt="MongoDB"
+              /></span>
+
+              <span class="skill-item"
+                ><img
+                  src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
+                  alt="GitHub"
+              /></span>
+            </div>
+          </div>
+        </div>
+        <!-- Decorative elements (dots/grid) -->
+        <div
+          class="absolute inset-0 z-0 opacity-10"
+          style="
+            background-image: radial-gradient(#333 1px, transparent 1px);
+            background-size: 20px 20px;
+          "
+        ></div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 px-4 bg-black">
+        <div class="container mx-auto max-w-5xl">
+          <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+            About Me
+          </h2>
+          <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 flex justify-center">
+              <img
+                src="assets/imgs/pp.jpg"
+                alt="Your Photo"
+                class="rounded-full shadow-lg border-4 border-purple-600 object-cover w-64 h-64 md:w-80 md:h-80"
+              />
+            </div>
+            <div class="md:w-1/2 text-lg text-gray-300 leading-relaxed">
+              <p class="mb-4">
+                Hello! I'm Sanket, a passionate
+                <span class="gradient-text">Full Stack Developer</span>
+                specializing in the
+                <span class="gradient-text">MERN</span> stack. With hands-on
+                experience through internships and personal projects, I’ve built
+                and deployed dynamic, user-centric web applications that balance
+                functionality with great design.
+              </p>
+              <p class="mb-4">
+                My core strength lies in crafting seamless front-end experiences
+                using React.js, combined with powerful Node.js and Express.js
+                backends, and efficient data handling with MongoDB. I've
+                developed platforms ranging from e-commerce systems to
+                AI-powered tools, demonstrating both adaptability and
+                problem-solving skills.
+              </p>
+              <p>
+                When I’m not coding, I enjoy playing football, or building side
+                projects with AI. I'm driven by curiosity, collaboration, and
+                the challenge of turning ideas into functional, impactful
+                applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-20 px-4 bg-gray-950">
+        <div class="container mx-auto max-w-5xl">
+          <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+            Experience
+          </h2>
+          <div class="space-y-12">
+            <!-- Experience 1 -->
+            <div class="card-bg p-8 rounded-xl">
+              <h3 class="text-2xl font-semibold text-white mb-2">
+                Software Engineering Fellow
+              </h3>
+              <p class="text-purple-400 text-lg mb-2">
+                Headstarter | July 2024 - Aug 2024
+              </p>
+              <ul class="list-disc list-inside text-gray-300 space-y-2">
+                <li>
+                  Delivered 5 AI projects by leveraging generative AI features.
+                </li>
+                <li>
+                  Developed expertise and learned Generative AI, Next Js, and
+                  Cloud Databases.
+                </li>
+                <li>
+                  Collaborated with a team to optimize development time by 50 %.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="card-bg p-8 rounded-xl">
+              <h3 class="text-2xl font-semibold text-white mb-2">
+                Web Developer Intern
+              </h3>
+              <p class="text-purple-400 text-lg mb-2">
+                iGap Technologies | June 2024 - July 2024
+              </p>
+              <ul class="list-disc list-inside text-gray-300 space-y-2">
+                <li>
+                  Developed an e-commerce platform using React Js, Node Js, and
+                  MongoDB.
+                </li>
+                <li>
+                  Integrated a robust product, payment, and user management
+                  system.
+                </li>
+                <li>
+                  Demonstrated proficiency in React Js components, state
+                  management, and routing for seamless user experience.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="card-bg p-8 rounded-xl">
+              <h3 class="text-2xl font-semibold text-white mb-2">
+                React Developer Intern
+              </h3>
+              <p class="text-purple-400 text-lg mb-2">
+                Priva Technologies | May 2023 - Sep 2023
+              </p>
+              <ul class="list-disc list-inside text-gray-300 space-y-2">
+                <li>
+                  Developed a responsive web interface for a pharma brand,
+                  increasing mobile usability.
+                </li>
+                <li>
+                  Improved page load time by 70% by using React Js components
+                  and state management.
+                </li>
+                <li>
+                  Designed a responsive and easy to engage website for seamless
+                  user experience.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 px-4 bg-black">
+        <div class="container mx-auto max-w-6xl">
+          <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+            My Projects
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Project Card 1 -->
+            <div
+              class="card-bg p-6 rounded-xl flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer project-card"
+              data-project-id="project1"
+            >
+              <img
+                src="assets/imgs/rating-app.png"
+                alt="MERN E-commerce"
+                class="rounded-lg mb-4 w-full h-48 object-cover"
+              />
+              <h3 class="text-2xl font-semibold mb-2 text-white">
+                Store Rating App
+              </h3>
+              <p class="text-gray-400 mb-4 flex-grow">
+                A store review platform with role-based access for users, store
+                owners, and admins. Built using React, Node.js, Express, and
+                MySQL. Features include secure JWT authentication and responsive
+                dashboards.
+              </p>
+            </div>
+            <!-- Project Card 2 -->
+            <div
+              class="card-bg p-6 rounded-xl flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer project-card"
+              data-project-id="project2"
+            >
+              <img
+                src="https://i.postimg.cc/cLmx9FLS/course-portal.png"
+                alt="Realtime Chat App"
+                class="rounded-lg mb-4 w-full h-48 object-cover"
+              />
+              <h3 class="text-2xl font-semibold mb-2 text-white">
+                Course Portal
+              </h3>
+              <p class="text-gray-400 mb-4 flex-grow">
+                A web application to manage and access online courses with
+                structured sections and lessons. Built with React, Node.js,
+                Express, and MongoDB. Features user authentication, course
+                creation, and dynamic content management.
+              </p>
+            </div>
+            <!-- Project Card 3 -->
+            <div
+              class="card-bg p-6 rounded-xl flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer project-card"
+              data-project-id="project3"
+            >
+              <img
+                src="https://i.postimg.cc/CxH5yFJ9/study-hub.png"
+                alt="Task Management API"
+                class="rounded-lg mb-4 w-full h-48 object-cover"
+              />
+              <h3 class="text-2xl font-semibold mb-2 text-white">
+                StudyHub AI
+              </h3>
+              <p class="text-gray-400 mb-4 flex-grow">
+                An AI-powered study assistant that offers chatbot support, note
+                summarization, and personalized roadmap creation. Built with
+                React, Next.js, and MongoDB. Features AI-driven responses and
+                secure user authentication.
+              </p>
+            </div>
+            <!-- Project Card 4 -->
+            <div
+              class="card-bg p-6 rounded-xl flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer project-card"
+              data-project-id="project4"
+            >
+              <img
+                src="https://i.postimg.cc/d05014bB/ai-chat-bot.png"
+                alt="Portfolio Website"
+                class="rounded-lg mb-4 w-full h-48 object-cover"
+              />
+              <h3 class="text-2xl font-semibold mb-2 text-white">
+                AI-Chat-Support
+              </h3>
+              <p class="text-gray-400 mb-4 flex-grow">
+                A real-time customer support chatbot powered by AI for instant
+                user assistance. Built with React, Next.js, and Gemini AI.
+                Features prompt-engineered, personalized responses and
+                responsive design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 px-4 bg-black">
+        <div class="container mx-auto max-w-5xl">
+          <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+            My Skills
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Skill Card 1: HTML5 -->
+            <div
+              class="card-bg p-4 rounded-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://img.icons8.com/color/96/000000/html-5.png"
+                alt="HTML5"
+                class="w-12 h-12 mb-2 object-contain"
+              />
+              <span class="text-lg font-medium text-white">HTML5</span>
+            </div>
+            <!-- Skill Card 2: CSS3 -->
+            <div
+              class="card-bg p-4 rounded-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://img.icons8.com/color/96/000000/css3.png"
+                alt="CSS3"
+                class="w-12 h-12 mb-2 object-contain"
+              />
+              <span class="text-lg font-medium text-white">CSS3</span>
+            </div>
+            <!-- Skill Card 3: JavaScript -->
+            <div
+              class="card-bg p-4 rounded-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://img.icons8.com/color/96/000000/javascript.png"
+                alt="JavaScript"
+                class="w-12 h-12 mb-2 object-contain"
+              />
+              <span class="text-lg font-medium text-white">JavaScript</span>
+            </div>
+            <!-- Skill Card 4: React -->
+            <div
+              class="card-bg p-4 rounded-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://img.icons8.com/?size=100&id=123603&format=png&color=000000"
+                alt="React"
+                class="w-12 h-12 mb-2 object-contain"
+              />
+              <span class="text-lg font-medium text-white">React.js</span>
+            </div>
+            <!-- Skill Card 5: Node.js -->
+            <div
+              class="card-bg p-4 rounded-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://img.icons8.com/color/96/000000/nodejs.png"
+                alt="Node.js"
+                class="w-12 h-12 mb-2 object-contain"
+              />
+              <span class="text-lg font-medium text-white">Node.js</span>
+            </div>
+            <!-- Skill Card 6: Express.js -->
+            <div
+              class="card-bg p-4 rounded-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=FFFFFF"
+                alt="Express.js"
+                class="w-12 h-12 mb-2 object-contain"
+              />
+              <span class="text-lg font-medium text-white">Express.js</span>
+            </div>
+            <!-- Skill Card 7: MongoDB -->
+            <div
+              class="card-bg p-4 rounded-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://img.icons8.com/color/96/000000/mongodb.png"
+                alt="MongoDB"
+                class="w-12 h-12 mb-2 object-contain"
+              />
+              <span class="text-lg font-medium text-white">MongoDB</span>
+            </div>
+
+            <!-- Skill Card 10: GitHub -->
+            <div
+              class="card-bg p-4 rounded-lg flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
+                alt="GitHub"
+                class="w-12 h-12 mb-2 object-contain"
+              />
+              <span class="text-lg font-medium text-white">GitHub</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-black py-8 px-4 text-center text-gray-500 text-sm rounded-t-xl"
+    >
+      <div class="container mx-auto">
+        <p>&copy; 2025 Sanket Kumbhar. All rights reserved.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+          <a
+            href="https://github.com/SNKT2024"
+            class="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+            target="_blank"
+          >
+            <img
+              src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
+              class="w-8 h-8"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/connect-to-sanket/"
+            class="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+            target="_blank"
+          >
+            <img
+              src="https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF"
+              class="w-8 h-8 transparent"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal-overlay" class="modal-overlay">
+      <div class="modal-content">
+        <button id="project-modal-close" class="modal-close-button">
+          &times;
+        </button>
+        <h3
+          id="project-modal-title"
+          class="text-xl md:text-2xl font-bold mb-4 gradient-text"
+        ></h3>
+        <img
+          id="project-modal-image"
+          src=""
+          alt="Project Image"
+          class="w-full h-48 md:h-64 object-cover rounded-lg mb-4"
+        />
+        <p
+          id="project-modal-description"
+          class="text-gray-300 leading-relaxed mb-6"
+        ></p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            id="project-modal-github"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary flex items-center justify-center gap-2"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.953 0-1.096.392-1.988 1.03-2.69-.104-.253-.448-1.274.097-2.659 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.385.202 2.406.096 2.659.637.702 1.029 1.594 1.029 2.69 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>GitHub Repo</span>
+          </a>
+          <a
+            id="project-modal-live"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary bg-transparent border border-purple-500 hover:bg-purple-600 hover:border-purple-600 transition-all duration-300 flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9V7h2v10zm4 0h-2V7h2v10z"
+              ></path>
+            </svg>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,190 @@
+/* Custom styles to match the aesthetic and ensure Inter font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #0d0d0d; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Custom scrollbar for a sleek look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b5cf6; /* Purple */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed; /* Darker purple on hover */
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a78bfa, #8b5cf6); /* Purple gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #a78bfa, #8b5cf6);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+}
+
+.card-bg {
+  background-color: #1a1a1a; /* Slightly lighter dark for cards */
+  border: 1px solid #2d2d2d;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link-hover:hover {
+  color: #a78bfa; /* Light purple on hover */
+}
+
+/* Hero section specific styling for background pattern */
+.hero-bg {
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(139, 92, 246, 0.1) 0%,
+    transparent 70%
+  );
+  background-size: 100% 100%;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modal specific styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  max-width: 600px; /* Increased max-width for project modal */
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-height: 90vh; /* Limit height for scrollable content */
+  overflow-y: auto; /* Enable scrolling for long descriptions */
+}
+
+.modal-overlay.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+  color: #a78bfa;
+}
+
+/* Skills slider in header */
+.skills-slider-container {
+  overflow: hidden; /* Hide scrollbar */
+  white-space: nowrap; /* Keep items in a single line */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 10%,
+    white 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 10%,
+    white 90%,
+    transparent
+  );
+  margin-top: 3rem; /* Space from buttons */
+}
+
+.skills-slider-inner {
+  display: inline-block; /* Allow content to be wider than container */
+  animation: scroll-skills 20s linear infinite; /* Adjust duration as needed */
+  padding-right: 100%; /* To ensure smooth continuous loop */
+}
+
+.skills-slider-inner:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+
+.skill-item {
+  display: inline-block;
+  margin: 0 1.5rem; /* Space between skill images */
+  vertical-align: middle;
+}
+
+.skill-item img {
+  width: 48px; /* Adjust size as needed */
+  height: 48px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(150%); /* Make images look consistent with theme */
+  transition: filter 0.3s ease;
+}
+
+.skill-item img:hover {
+  filter: grayscale(0%) brightness(100%); /* Color on hover */
+}
+
+@keyframes scroll-skills {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  } /* Scroll half the width of the duplicated content */
+}
